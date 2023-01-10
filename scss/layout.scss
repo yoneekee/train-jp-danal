@@ -28,6 +28,7 @@ p {
   box-sizing: border-box;
   color: #fff;
   overflow: hidden; // 100px 넘어선 것들은 잘라버리겠다.
+  top: 0;
   transition: all 0.25s ease;
   // &:hover {
   //   height: 380px;
@@ -110,12 +111,5 @@ p {
         }
       }
     }
-  }
-
-  .link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
   }
 }

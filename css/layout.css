@@ -28,6 +28,7 @@ p {
   box-sizing: border-box;
   color: #fff;
   overflow: hidden;
+  top: 0;
   transition: all 0.25s ease;
 }
 .header.on {
@@ -86,10 +87,4 @@ p {
   display: flex;
   padding: 10px 0;
   justify-content: center;
-}
-.header .link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
 }

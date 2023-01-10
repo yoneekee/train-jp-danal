@@ -5,22 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>다날 - 다가오는 날은 다 좋은 날</title>
-    <link
-      rel="shortcut icon"
-      href="../images/layout/favicon.ico"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="../images/layout/favicon.ico" type="image/x-icon" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/common.css" />
     <link rel="stylesheet" href="../css/pretendard.css" />
@@ -30,12 +20,7 @@
   <body>
     <header class="header">
       <h1 class="logo">
-        <a href="" class="logo__link"
-          ><img
-            src="../images/layout/logo.png"
-            alt="다날 로고"
-            class="logo__img"
-        /></a>
+        <a href="" class="logo__link"><img src="../images/layout/logo.png" alt="다날 로고" class="logo__img" /></a>
       </h1>
       <nav class="gnb">
         <h2 class="hidden">global navigation</h2>
@@ -84,7 +69,7 @@
           </li>
         </ul>
       </nav>
-      <a href="" class="link"><span>결제내역조회</span></a>
+      <a href="" class="link">결제내역조회</a>
     </header>
     <!-- header end -->
     <main>
@@ -100,19 +85,83 @@
           <span class="material-icons"> south </span>
         </span>
       </section>
+      <!-- video end -->
+      <section class="about section">
+        <div class="title-box">
+          <h2>Since <span>1997</span></h2>
+          <p>
+            <span>미래를</span> 꿈꾸던 벤처 1세대에서 <br />
+            미래를 이끄는 <span>혁신기업</span>이 되었습니다.
+          </p>
+        </div>
+        <a href="" class="btn btn--blue">about danal</a>
+      </section>
+      <!-- about end -->
+      <section class="tech section">
+        <div class="container">
+          <div class="title-box">
+            <h2>시대를 여는 기술</h2>
+            <p>
+              세계 최초, 휴대폰결제를 시작으로 블록체인 플랫폼까지, <br />
+              다날의 기술혁신은 멈추지 않습니다.
+            </p>
+            <a href="">Payment Service</a>
+          </div>
+          <div class="contents">
+            <ul class="icon-list">
+              <li>
+                <a href=""><img src="../images/main/icon_service01.png" alt="" /><span>휴대폰 결제</span></a>
+              </li>
+              <li>
+                <a href=""><img src="../images/main/icon_service02.png" alt="" /><span>휴대폰 결제</span></a>
+              </li>
+              <li>
+                <a href=""><img src="../images/main/icon_service03.png" alt="" /><span>휴대폰 결제</span></a>
+              </li>
+              <li>
+                <a href=""><img src="../images/main/icon_service04.png" alt="" /><span>휴대폰 결제</span></a>
+              </li>
+              <li>
+                <a href=""><img src="../images/main/icon_service05.png" alt="" /><span>휴대폰 결제</span></a>
+              </li>
+              <li>
+                <a href=""><img src="../images/main/icon_service06.png" alt="" /><span>휴대폰 결제</span></a>
+              </li>
+              <li>
+                <a href=""><img src="../images/main/icon_service07.png" alt="" /><span>휴대폰 결제</span></a>
+              </li>
+              <li>
+                <a href=""><img src="../images/main/icon_service08.png" alt="" /><span>휴대폰 결제</span></a>
+              </li>
+              <li>
+                <a href=""><img src="../images/main/icon_service09.png" alt="" /><span>휴대폰 결제</span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </main>
 
     <script>
+      //console.log(window);
+      //window.alert("아이디가 맞지 않습니다.");
+      //dom  (document object model);
+
+      //f(x) = x+5;
+
+      function plus5() {
+        console.log(x + 5);
+      }
+      function bank(money) {
+        console.log(money * 1.045);
+      }
       const header = document.querySelector(".header");
       const gnb = document.querySelector(".gnb");
-      const link = document.querySelector(".link");
       gnb.addEventListener("mouseenter", function () {
         header.classList.add("on");
-        link.classList.add("hidden");
       });
       gnb.addEventListener("mouseleave", function () {
         header.classList.remove("on");
-        link.classList.remove("hidden");
       });
     </script>
   </body>
