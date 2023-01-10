@@ -233,6 +233,9 @@
 
   .platform-swiper {
     position: relative;
+    li {
+      width: 300px;
+    }
   }
 
   .platform-list {
