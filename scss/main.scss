@@ -219,6 +219,11 @@
 }
 
 .platform {
+  overflow: hidden;
+
+  .container {
+    width: 100%;
+  }
   .title-box {
     text-align: center;
     h2 {
@@ -226,8 +231,19 @@
     }
   }
 
+  .platform-swiper {
+    position: relative;
+  }
+
   .platform-list {
     li {
+      width: 300px;
+      position: relative;
+      &:hover {
+        img {
+          transform: scale(1.25);
+        }
+      }
       .img-box {
         width: 300px;
         height: 300px;
@@ -237,6 +253,7 @@
           width: 100%;
           height: 100%;
           object-fit: cover;
+          transition: all 0.25s ease;
         }
       }
 
@@ -253,7 +270,8 @@
         background-color: $red;
         box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
         top: 50px;
-        left: 50%;
+        left: 60%;
+        white-space: nowrap; // 무조건 두 줄 안 되고 한줄로
       }
 
       .title {
@@ -263,7 +281,40 @@
       }
     }
   }
+
+  .btn {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid $blue;
+    z-index: 1;
+    &--prev {
+      left: 50px;
+      color: $blue;
+      text-align: center;
+      opacity: 0.7;
+      &::after {
+        font-size: 48px;
+        @include icon("chevron_left", 0);
+      }
+    }
+    &--next {
+      right: 50px;
+      color: $blue;
+      text-align: center;
+      opacity: 0.7;
+      &::after {
+        font-size: 48px;
+        @include icon("chevron_right", 0);
+      }
+    }
+  }
 }
+/******************* Platform end *******************/
 @keyframes arrow-move {
   0% {
     transform: translateY(0);
