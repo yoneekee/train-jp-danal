@@ -157,6 +157,9 @@ p {
 }
 .footer .upper .logo img {
   width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .footer .upper .list {
   display: flex;

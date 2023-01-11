@@ -1,4 +1,5 @@
 @import "vars";
+@import "mixins";
 body {
   font-family: "Lato", "Pretendard", "Dotum", sans-serif;
   font-size: 16px;
@@ -189,6 +190,7 @@ p {
     .logo {
       img {
         width: 120px;
+        @include center();
       }
     }
     .list {
