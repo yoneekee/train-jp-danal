@@ -141,6 +141,9 @@
 .block-chain .container .title-box {
   width: 45%;
 }
+.block-chain .container .title-box h2 {
+  white-space: nowrap;
+}
 .block-chain .container .contents {
   width: 55%;
   padding-top: 100px;
@@ -151,22 +154,23 @@
   gap: 30px;
 }
 .block-chain .container .contents .block-chain__list > li {
-  width: calc(50% - 30px);
+  width: calc(50% - 15px);
   padding: 30px;
   box-sizing: border-box;
   background-color: rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
+  border-radius: 30px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
 }
 .block-chain .container .contents .block-chain__list > li .title {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 15px;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 20px;
   margin-bottom: 20px;
 }
 .block-chain .container .contents .block-chain__list > li .title h3 {
-  font-size: 40px;
+  font-size: 20px;
   text-transform: uppercase;
 }
 .block-chain .container .contents .block-chain__list > li .title span {
@@ -184,7 +188,7 @@
   display: none;
 }
 .block-chain .container .contents .block-chain__list > li ul li {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .block-chain .container .contents .block-chain__list > li ul li a {
   display: block;
@@ -198,14 +202,24 @@
   position: absolute;
   right: 0;
 }
-.block-chain .container .contents .block-chain__list > li .num_main {
+.block-chain .container .contents .block-chain__list > li .num {
+  display: flex;
+  align-items: center;
+}
+.block-chain .container .contents .block-chain__list > li .num--main {
   font-size: 48px;
   font-weight: 900;
 }
-.block-chain .container .contents .block-chain__list > li .num_state {
-  color: #297bf6;
+.block-chain .container .contents .block-chain__list > li .num--state {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
 }
-.block-chain .container .contents .block-chain__list > li .num_company {
+.block-chain .container .contents .block-chain__list > li .num--state .material-icons {
+  font-size: 48px;
+  color: red;
+}
+.block-chain .container .contents .block-chain__list > li .num--company {
   margin-left: auto;
 }
 
@@ -214,6 +228,34 @@
 }
 .platform .container {
   width: 100%;
+  position: relative;
+}
+.platform .container:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 300px;
+  top: -120px;
+  bottom: -120px;
+  background-color: red;
+  z-index: 2;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 30%, rgba(255, 255, 255, 0) 100%);
+}
+.platform .container:after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  width: 300px;
+  top: -120px;
+  bottom: -120px;
+  background-color: red;
+  z-index: 2;
+  background: rgb(255, 255, 255);
+  background: rgb(255, 255, 255);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 70%, rgb(255, 255, 255) 100%);
 }
 .platform .title-box {
   text-align: center;
@@ -229,7 +271,7 @@
   position: relative;
 }
 .platform .platform-list li:hover img {
-  transform: scale(1.25);
+  transform: scale(1.5);
 }
 .platform .platform-list li .img-box {
   width: 300px;
@@ -245,16 +287,13 @@
 }
 .platform .platform-list li .sticker {
   position: absolute;
+  background-color: #297bf6;
   color: #fff;
   padding: 10px 30px;
   border-radius: 100px;
   text-transform: uppercase;
-  opacity: 0.85;
-  text-shadow: 1px 1px 0px #ff1801,2px 2px 0px #ff1801,3px 3px 0px #ff1801,4px 4px 0px #ff1801,5px 5px 0px #ff1801,6px 6px 0px #ff1801,7px 7px 0px #ff1801,8px 8px 0px #ff1801,9px 9px 0px #ff1801,10px 10px 0px #ff1801,11px 11px 0px #ff1801,12px 12px 0px #ff1801,13px 13px 0px #ff1801,14px 14px 0px #ff1801,15px 15px 0px #ff1801,16px 16px 0px #ff1801,17px 17px 0px #ff1801,18px 18px 0px #ff1801,19px 19px 0px #ff1801,20px 20px 0px #ff1801;
   overflow: hidden;
-  box-sizing: border-box;
-  background-color: #ff4634;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 0px #074bb2,2px 2px 0px #074bb2,3px 3px 0px #074bb2,4px 4px 0px #074bb2,5px 5px 0px #074bb2,6px 6px 0px #074bb2,7px 7px 0px #074bb2,8px 8px 0px #074bb2,9px 9px 0px #074bb2,10px 10px 0px #074bb2,11px 11px 0px #074bb2,12px 12px 0px #074bb2,13px 13px 0px #074bb2,14px 14px 0px #074bb2,15px 15px 0px #074bb2,16px 16px 0px #074bb2,17px 17px 0px #074bb2,18px 18px 0px #074bb2,19px 19px 0px #074bb2,20px 20px 0px #074bb2;
   top: 50px;
   left: 60%;
   white-space: nowrap;
@@ -263,25 +302,23 @@
   display: block;
   text-align: center;
   font-size: 20px;
+  margin-top: 30px;
 }
 .platform .btn {
   position: absolute;
   width: 80px;
   height: 80px;
-  top: 50%;
-  transform: translateY(-50%);
   background-color: #fff;
   border-radius: 50%;
-  border: 1px solid #297bf6;
-  z-index: 1;
+  border: 1px solid #ccc;
+  top: 50%;
+  transform: translateY(-55%);
+  z-index: 3;
 }
 .platform .btn--prev {
   left: 50px;
-  color: #297bf6;
-  text-align: center;
-  opacity: 0.7;
 }
-.platform .btn--prev::after {
+.platform .btn--prev:after {
   font-size: 48px;
   display: inline-block;
   content: "chevron_left";
@@ -290,11 +327,8 @@
 }
 .platform .btn--next {
   right: 50px;
-  color: #297bf6;
-  text-align: center;
-  opacity: 0.7;
 }
-.platform .btn--next::after {
+.platform .btn--next:after {
   font-size: 48px;
   display: inline-block;
   content: "chevron_right";
@@ -302,7 +336,32 @@
   font-family: "Material Icons";
 }
 
-/******************* Platform end *******************/
+.recruit {
+  background-image: url("../images/main/img_main01.png");
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+}
+
+.business .container {
+  display: flex;
+  justify-content: space-between;
+}
+.business .container .title-box h2 {
+  color: #297bf6;
+}
+.business .container .title-box a:after {
+  color: #297bf6;
+}
+.business .img {
+  width: 800px;
+  height: 520px;
+  background-image: url("../images/main/img_partner.png");
+  background-size: cover;
+  border-radius: 50px;
+  background-position: center;
+}
+
 @keyframes arrow-move {
   0% {
     transform: translateY(0);

@@ -137,12 +137,14 @@
   background-size: cover;
   background-attachment: fixed;
   color: #fff;
-
   .container {
     display: flex;
     justify-content: space-between;
     .title-box {
       width: 45%;
+      h2 {
+        white-space: nowrap;
+      }
     }
     .contents {
       width: 55%;
@@ -151,23 +153,22 @@
         display: flex;
         flex-wrap: wrap;
         gap: 30px;
-
         > li {
-          width: calc(50% - 30px);
+          width: calc(50% - 15px);
           padding: 30px;
           box-sizing: border-box;
           background-color: rgba(255, 255, 255, 0.15);
-          border-radius: 20px;
+          border-radius: 30px;
           box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
-
           .title {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-bottom: 15px;
+            border-bottom: 1px solid #fff;
+            padding-bottom: 20px;
             margin-bottom: 20px;
             h3 {
-              font-size: 40px;
+              font-size: 20px;
               text-transform: uppercase;
             }
             span {
@@ -184,7 +185,7 @@
           }
           ul {
             li {
-              margin-top: 10px;
+              margin-top: 20px;
               a {
                 display: block;
                 white-space: nowrap;
@@ -192,7 +193,6 @@
                 text-overflow: ellipsis;
                 padding-right: 100px;
                 position: relative;
-
                 .date {
                   position: absolute;
                   right: 0;
@@ -201,14 +201,22 @@
             }
           }
           .num {
-            &_main {
+            display: flex;
+            align-items: center;
+            &--main {
               font-size: 48px;
               font-weight: 900;
             }
-            &_state {
-              color: $blue;
+            &--state {
+              display: flex;
+              align-items: center;
+              font-size: 20px;
+              .material-icons {
+                font-size: 48px;
+                color: red;
+              }
             }
-            &_company {
+            &--company {
               margin-left: auto;
             }
           }
@@ -219,32 +227,54 @@
 }
 
 .platform {
-  overflow: hidden;
-
   .container {
     width: 100%;
+    position: relative;
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      width: 300px;
+      top: -120px;
+      bottom: -120px;
+      background-color: red;
+      z-index: 2;
+      background: rgb(255, 255, 255);
+      background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0) 100%);
+    }
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 0;
+      width: 300px;
+      top: -120px;
+      bottom: -120px;
+      background-color: red;
+      z-index: 2;
+      background: rgb(255, 255, 255);
+      background: rgb(255, 255, 255);
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 70%, rgba(255, 255, 255, 1) 100%);
+    }
   }
+  overflow: hidden;
   .title-box {
     text-align: center;
     h2 {
       color: $blue;
     }
   }
-
   .platform-swiper {
     position: relative;
-    li {
-      width: 300px;
-    }
   }
-
   .platform-list {
     li {
       width: 300px;
       position: relative;
       &:hover {
         img {
-          transform: scale(1.25);
+          transform: scale(1.5);
         }
       }
       .img-box {
@@ -259,65 +289,85 @@
           transition: all 0.25s ease;
         }
       }
-
       .sticker {
         position: absolute;
+        background-color: $blue;
         color: #fff;
         padding: 10px 30px;
         border-radius: 100px;
         text-transform: uppercase;
-        opacity: 0.85;
-        @include longShadow(20, darken($red, 10));
         overflow: hidden;
-        box-sizing: border-box;
-        background-color: $red;
-        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+        @include longShadow(20, darken($blue, 20));
         top: 50px;
         left: 60%;
-        white-space: nowrap; // 무조건 두 줄 안 되고 한줄로
+        white-space: nowrap;
       }
-
       .title {
         display: block;
         text-align: center;
         font-size: 20px;
+        margin-top: 30px;
       }
     }
   }
-
   .btn {
     position: absolute;
     width: 80px;
     height: 80px;
-    top: 50%;
-    transform: translateY(-50%);
     background-color: #fff;
     border-radius: 50%;
-    border: 1px solid $blue;
-    z-index: 1;
+    border: 1px solid #ccc;
+    top: 50%;
+    transform: translateY(-55%);
+    z-index: 3;
     &--prev {
       left: 50px;
-      color: $blue;
-      text-align: center;
-      opacity: 0.7;
-      &::after {
+      &:after {
         font-size: 48px;
         @include icon("chevron_left", 0);
       }
     }
     &--next {
       right: 50px;
-      color: $blue;
-      text-align: center;
-      opacity: 0.7;
-      &::after {
+      &:after {
         font-size: 48px;
         @include icon("chevron_right", 0);
       }
     }
   }
 }
-/******************* Platform end *******************/
+
+.recruit {
+  background-image: url("../images/main/img_main01.png");
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+}
+
+.business {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    .title-box {
+      h2 {
+        color: $blue;
+      }
+      a:after {
+        color: $blue;
+      }
+    }
+  }
+
+  .img {
+    width: 800px;
+    height: 520px;
+    background-image: url("../images/main/img_partner.png");
+    background-size: cover;
+    border-radius: 50px;
+    background-position: center;
+  }
+}
+
 @keyframes arrow-move {
   0% {
     transform: translateY(0);
