@@ -16,6 +16,8 @@ p {
   /* header */
   $h: 100px;
   display: flex;
+  position: fixed;
+  top: 0;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
@@ -24,12 +26,10 @@ p {
   padding: 0 50px;
   height: $h;
   z-index: 99;
-  position: fixed;
   width: 100%;
   box-sizing: border-box;
   color: #fff;
   overflow: hidden; // 100px 넘어선 것들은 잘라버리겠다.
-  top: 0;
   transition: all 0.25s ease;
   // &:hover {
   //   height: 380px;
@@ -37,11 +37,11 @@ p {
   //   color: #111;
   // }
   &:after {
-    content: "";
     display: block;
     position: absolute;
-    left: 0;
     top: 100px;
+    left: 0;
+    content: "";
     width: 100%;
     height: 1px;
     background-color: #ccc;
@@ -54,13 +54,46 @@ p {
     background-color: #fff;
     color: #111;
     .link {
-      border-color: #111;
-      color: #111;
+      border-color: #fff;
+      color: #fff;
     }
     &:after {
       opacity: 1;
     }
   }
+
+  &.scroll {
+    top: 0;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.25);
+    color: #fff;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    .link {
+      border-color: #fff;
+      color: #fff;
+    }
+
+    &:hover {
+      .link {
+        &:hover {
+          border: 0;
+          padding: 21px 32px;
+          background-color: $blue;
+          color: #fff;
+        }
+      }
+      &.on {
+        height: 380px;
+        background-color: #fff;
+        color: #111;
+
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
   .logo {
     &__link {
       display: flex;
@@ -87,29 +120,29 @@ p {
           }
         }
         > a {
+          display: flex;
+          position: relative;
+          align-items: center;
+          height: $h;
+          padding: 0 60px;
           //font-size: 18px;
           //font-weight: 700;
           font: {
             size: 18px;
             weight: 700;
           }
-          display: flex;
-          align-items: center;
-          height: $h;
-          padding: 0 60px;
-          position: relative;
           //outline: 1px solid red;
 
           &:after {
-            content: "";
             display: block;
+            position: absolute;
+            //right: 0;
+            bottom: 0;
+            left: 0;
+            content: "";
             width: 100%;
             height: 3px;
             background-color: $blue;
-            position: absolute;
-            left: 0;
-            //right: 0;
-            bottom: 0;
             //width: 0;
             transform: scaleX(0);
             transition: all 0.25s ease;
@@ -138,5 +171,48 @@ p {
     padding: 20px 30px;
     border-radius: 100px;
     margin-top: 20px;
+    &:hover {
+      border: 0;
+      padding: 21px 32px;
+      background-color: $blue;
+      color: #fff;
+    }
+  }
+}
+//////
+.footer {
+  padding: 80px 250px;
+  background-color: #f8f8f8;
+  border-top: 1px solid #ccc;
+  .upper {
+    display: flex;
+    .logo {
+      img {
+        width: 120px;
+      }
+    }
+    .list {
+      display: flex;
+      margin-top: 10px;
+      li {
+        margin-left: 50px;
+        font-weight: 500;
+        color: #999;
+        &:nth-child(1) {
+          color: #111;
+          font-weight: 700;
+        }
+      }
+    }
+    .select {
+      margin-left: auto;
+      width: 250px;
+      height: 40px;
+      border: 1px solid #ccc;
+    }
+  }
+  .lower {
+    margin-top: 30px;
+    font-size: 14px;
   }
 }
